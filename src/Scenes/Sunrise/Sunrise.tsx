@@ -52,7 +52,6 @@ export const Sunrise = () => {
             transform: "translate(-50%, 0) rotate(0deg)",
           },
           scroll: {
-            markers: true,
             start: "start bottom",
             end: "bottom bottom",
           },
