@@ -1,0 +1,25 @@
+.gradient {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 40%,
+    rgba(0, 0, 0, 0) 60%
+  );
+}
+.wheat {
+  top: -70%;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .wheat {
+    height: fit-content;
+  }
+  .gradient {
+    object-fit: unset;
+  }
+}

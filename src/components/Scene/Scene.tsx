@@ -7,9 +7,10 @@ import _ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(_ScrollTrigger);
 
 interface SceneProps {
-  backgroundImage: string;
-  altImage: string;
+  backgroundImage?: string;
+  altImage?: string;
   backgroundColor?: string;
+  gradient?: boolean;
 }
 
 interface ForegroundProps {
@@ -21,8 +22,8 @@ interface ForegroundProps {
 }
 
 interface AnimationsType {
-  from: gsap.TweenVars;
-  to: gsap.TweenVars;
+  from?: gsap.TweenVars;
+  to?: gsap.TweenVars;
   scroll?: ScrollTrigger.Vars;
 }
 
@@ -44,15 +45,19 @@ const ScrollTrigger = ({
   const container = useRef<HTMLDivElement | null>(null);
 
   useGSAP(() => {
-    gsap.fromTo(container.current, animations.from, {
-      ...animations.to,
-      scrollTrigger: {
-        trigger: container.current,
-        scrub: true,
-        start: "top bottom",
-        ...animations.scroll,
-      },
-    });
+    gsap.fromTo(
+      container.current,
+      { ...animations.from },
+      {
+        ...animations.to,
+        scrollTrigger: {
+          trigger: container.current,
+          scrub: true,
+          start: "top bottom",
+          ...animations.scroll,
+        },
+      }
+    );
   });
 
   return (
@@ -107,25 +112,33 @@ const Item = ({
   );
 };
 
+const Container = ({ children }: React.PropsWithChildren) => {
+  return <div className={styles.container}>{children}</div>;
+};
+
 export const Scene = ({
   backgroundImage,
+  altImage,
   backgroundColor,
+  gradient = true,
   children,
 }: React.PropsWithChildren<SceneProps>) => {
   return (
     <div
-      className={styles.background}
+      className={`${styles.background} ${gradient ? styles.gradient : ""}`}
       style={
         {
           "--background-color": backgroundColor,
         } as CSSProperties
       }
     >
-      <img
-        className={styles.backgroundImg}
-        src={backgroundImage}
-        alt={"test"}
-      />
+      {backgroundImage && (
+        <img
+          className={styles.backgroundImg}
+          src={backgroundImage}
+          alt={altImage}
+        />
+      )}
       {children}
     </div>
   );
@@ -133,3 +146,4 @@ export const Scene = ({
 
 Scene.Foreground = Foreground;
 Scene.Item = Item;
+Scene.Container = Container;

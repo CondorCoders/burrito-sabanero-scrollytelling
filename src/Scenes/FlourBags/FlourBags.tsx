@@ -1,20 +1,24 @@
 import { Scene } from "../../components/Scene/Scene";
-import styles from "./Sunrise.module.css";
+import styles from "./FlourBags.module.css";
 
-export const Sunrise = () => {
+export const FlourBags = () => {
   return (
-    <Scene backgroundImage="/Backgrounds/Sunrise.webp" altImage="Amanecer">
+    <Scene backgroundImage="/Backgrounds/Sundown.webp" altImage="Atardecer">
       <Scene.Item
-        containerClassName={styles.clouds}
-        className={styles.cloudImage}
-        backgroundImage="/Transitions/Cloud.webp"
-        altImage="Clouds"
+        className={styles.gradient}
+        containerClassName={styles.wheat}
+        backgroundImage="/Transitions/Wheat.webp"
+        altImage="Wheat"
         animations={{
+          from: {
+            top: "0",
+          },
           to: {
-            top: "-120%",
+            top: "-10%",
           },
           scroll: {
-            start: "center bottom",
+            start: "top bottom",
+            end: "center bottom",
           },
         }}
       />
@@ -37,16 +41,14 @@ export const Sunrise = () => {
       <Scene.Container>
         <Scene.Item
           center
-          backgroundImage="/Characters/BurritoRunning.webp"
+          backgroundImage="/Characters/BurritoWalkingWithBag.webp"
           altImage="Burrito corriendo"
           animations={{
             from: {
-              bottom: "-5%",
-              transform: "translate(-90%, 0) rotate(-40deg)",
+              left: "40%",
             },
             to: {
-              bottom: "18%",
-              transform: "translate(-50%, 0) rotate(0deg)",
+              left: "50%",
             },
             scroll: {
               start: "start bottom",

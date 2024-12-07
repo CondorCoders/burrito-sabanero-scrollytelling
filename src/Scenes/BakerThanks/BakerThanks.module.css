@@ -1,0 +1,34 @@
+.grass {
+  top: -40%;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+.gradient {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 75%,
+    rgba(0, 0, 0, 0)
+  );
+}
+.bread {
+  width: 50%;
+}
+.breadRight {
+  right: 0;
+}
+
+@media (min-width: 768px) {
+  .bread {
+    width: 20%;
+  }
+  .grass {
+    height: fit-content;
+  }
+  .gradient {
+    object-fit: unset;
+  }
+}
