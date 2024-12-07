@@ -40,6 +40,24 @@ export const HelpBaker = () => {
           },
         }}
       />
+      <Scene.Text
+        text="El sol despuntaba entre el cielo rosado, y la brisa matutina le daba cuidado."
+        animations={{
+          from: {
+            top: "30%",
+            opacity: 0,
+          },
+          to: {
+            top: "15%",
+            opacity: 1,
+          },
+          scroll: {
+            start: "top bottom",
+            end: "top center",
+          },
+        }}
+      />
+
       <Scene.Container>
         <Scene.Item
           containerClassName={styles.flour}

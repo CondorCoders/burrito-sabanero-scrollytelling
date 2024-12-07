@@ -60,6 +60,41 @@ export const BakerThanks = () => {
           },
         }}
       />
+      <Scene.Text
+        text="El panadero dijo con gratitud sincera:"
+        animations={{
+          from: {
+            top: "20%",
+            opacity: 0,
+          },
+          to: {
+            top: "10%",
+            opacity: 1,
+          },
+          scroll: {
+            start: "top bottom",
+            end: "top center",
+          },
+        }}
+      />
+      <Scene.Text
+        invert
+        text="“¡Gracias, burrito, por tu gran carrera! Hoy hornearé pan con todo mi afán, y mi alegría llenará el pueblo de pan.”"
+        animations={{
+          from: {
+            top: "30%",
+            opacity: 0,
+          },
+          to: {
+            top: "20%",
+            opacity: 1,
+          },
+          scroll: {
+            start: "top bottom",
+            end: "top center",
+          },
+        }}
+      />
       <Scene.Item
         center
         backgroundImage="/Characters/BakerHappy.webp"

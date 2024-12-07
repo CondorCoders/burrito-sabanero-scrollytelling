@@ -22,6 +22,58 @@ export const TalkToBaker = () => {
           },
         }}
       />
+      <Scene.Text
+        text="En un pueblo vio a un panadero esforzarse, la harina era mucha y no podía cargarse"
+        animations={{
+          from: {
+            top: "-20%",
+            opacity: 0,
+          },
+          to: {
+            top: "-25%",
+            opacity: 1,
+          },
+          scroll: {
+            start: "top bottom",
+            end: "top center",
+          },
+        }}
+      />
+      <Scene.Text
+        text="El burrito le dijo:"
+        animations={{
+          from: {
+            top: "20%",
+            opacity: 0,
+          },
+          to: {
+            top: "10%",
+            opacity: 1,
+          },
+          scroll: {
+            start: "top bottom",
+            end: "top center",
+          },
+        }}
+      />
+      <Scene.Text
+        invert
+        text="“Déjame ayudar, llevaré la carga y podrás hornear”"
+        animations={{
+          from: {
+            top: "30%",
+            opacity: 0,
+          },
+          to: {
+            top: "20%",
+            opacity: 1,
+          },
+          scroll: {
+            start: "top bottom",
+            end: "top center",
+          },
+        }}
+      />
       <Scene.Item
         center
         backgroundImage="/Characters/BurritoWalking.webp"

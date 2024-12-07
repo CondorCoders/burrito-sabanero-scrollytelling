@@ -37,6 +37,12 @@ interface ScrollTriggerProps {
   animations: AnimationsType;
 }
 
+interface TextProps {
+  animations: AnimationsType;
+  text: string;
+  invert?: boolean;
+}
+
 const ScrollTrigger = ({
   children,
   className,
@@ -112,6 +118,19 @@ const Item = ({
   );
 };
 
+const Text = ({ animations, invert, text }: TextProps): JSX.Element => {
+  return (
+    <ScrollTrigger
+      className={`${styles.text} ${styles.center} ${
+        invert ? styles.blackContainer : styles.whiteContainer
+      }`}
+      animations={animations}
+    >
+      <p>{text}</p>
+    </ScrollTrigger>
+  );
+};
+
 const Container = ({ children }: React.PropsWithChildren) => {
   return <div className={styles.container}>{children}</div>;
 };
@@ -147,3 +166,4 @@ export const Scene = ({
 Scene.Foreground = Foreground;
 Scene.Item = Item;
 Scene.Container = Container;
+Scene.Text = Text;

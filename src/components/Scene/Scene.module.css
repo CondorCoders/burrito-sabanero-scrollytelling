@@ -59,9 +59,32 @@
   left: 50%;
   transform: translate(-50%, 0);
 }
+.text {
+  z-index: 2;
+  font-family: WavingAtChristmas;
+  position: absolute;
+  width: 80%;
+  padding: 1rem 2rem;
+
+  text-align: center;
+  font-size: 2.5rem;
+  border-radius: 0.2rem;
+}
+
+.whiteContainer {
+  background-color: #fff;
+}
+.blackContainer {
+  background-color: #000;
+  color: #fff;
+}
 
 @media (min-width: 768px) {
   .item {
     width: fit-content;
+  }
+  .text {
+    max-width: 50%;
+    font-size: 3rem;
   }
 }

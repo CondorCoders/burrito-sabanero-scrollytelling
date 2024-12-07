@@ -18,6 +18,7 @@ export const Sunrise = () => {
           },
         }}
       />
+
       <Scene.Foreground
         backgroundImage="/Foregrounds/Field.webp"
         altImage="Field"
@@ -27,6 +28,23 @@ export const Sunrise = () => {
           },
           to: {
             bottom: 0,
+          },
+          scroll: {
+            start: "top bottom",
+            end: "top center",
+          },
+        }}
+      />
+      <Scene.Text
+        text="Por un sendero al alba comenzó, el burrito sabanero su viaje emprendió."
+        animations={{
+          from: {
+            top: "30%",
+            opacity: 0,
+          },
+          to: {
+            top: "25%",
+            opacity: 1,
           },
           scroll: {
             start: "top bottom",

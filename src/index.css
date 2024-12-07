@@ -1,6 +1,19 @@
 :root {
 }
 
+@font-face {
+  font-family: WavingAtChristmas;
+  src: url("/Fonts/WavingAtChristmas.ttf") format("truetype"),
+    url("/Fonts/WavingAtChristmas.woff2") format("woff2"),
+    url("/Fonts/WavingAtChristmas.woff") format("woff");
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+}
+
 body {
+  margin: 0;
+}
+p {
   margin: 0;
 }

@@ -38,6 +38,23 @@ export const FlourBags = () => {
           },
         }}
       />
+      <Scene.Text
+        text="Con pasos ligeros al molino partió, y pronto con la harina de regreso volvió."
+        animations={{
+          from: {
+            top: "30%",
+            opacity: 0,
+          },
+          to: {
+            top: "20%",
+            opacity: 1,
+          },
+          scroll: {
+            start: "top bottom",
+            end: "top center",
+          },
+        }}
+      />
       <Scene.Container>
         <Scene.Item
           center
