@@ -3,7 +3,14 @@ import styles from "./BakerThanks.module.css";
 
 export const BakerThanks = () => {
   return (
-    <Scene backgroundColor="#E0BE67" gradient={false}>
+    <Scene
+      backgroundColor="#E0BE67"
+      gradient={false}
+      music={{
+        musicTrack: "/Music/WooWhoo.mp3",
+        volume: 1,
+      }}
+    >
       <Scene.Item
         className={styles.gradient}
         containerClassName={styles.grass}

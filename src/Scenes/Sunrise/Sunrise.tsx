@@ -3,7 +3,14 @@ import styles from "./Sunrise.module.css";
 
 export const Sunrise = () => {
   return (
-    <Scene backgroundImage="/Backgrounds/Sunrise.webp" altImage="Amanecer">
+    <Scene
+      backgroundImage="/Backgrounds/Sunrise.webp"
+      altImage="Amanecer"
+      music={{
+        musicTrack: "/Music/ChristmasMusic.mp3",
+        volume: 0.5,
+      }}
+    >
       <Scene.Item
         containerClassName={styles.clouds}
         className={styles.cloudImage}

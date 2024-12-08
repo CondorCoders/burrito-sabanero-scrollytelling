@@ -1,16 +1,24 @@
-import { CSSProperties, useRef } from "react";
+import { CSSProperties, useContext, useEffect, useRef } from "react";
 import styles from "./Scene.module.css";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import _ScrollTrigger from "gsap/ScrollTrigger";
+import { MusicContext } from "../../contexts/MusicContext";
 
 gsap.registerPlugin(_ScrollTrigger);
+
+interface MusicProps {
+  musicTrack?: string;
+  volume?: number;
+  loop?: boolean;
+}
 
 interface SceneProps {
   backgroundImage?: string;
   altImage?: string;
   backgroundColor?: string;
   gradient?: boolean;
+  music?: MusicProps;
 }
 
 interface ForegroundProps {
@@ -141,9 +149,40 @@ export const Scene = ({
   backgroundColor,
   gradient = true,
   children,
+  music,
 }: React.PropsWithChildren<SceneProps>) => {
+  const { playMusic } = useContext(MusicContext);
+  const container = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const sound = new Audio(music?.musicTrack);
+    if (music?.volume) {
+      sound.volume = music.volume;
+    }
+    if (music?.loop) {
+      sound.loop = true;
+    }
+    const intersectionCallback = (entries: IntersectionObserverEntry[]) => {
+      const entry = entries[0];
+      if (entry.isIntersecting && music) {
+        if (playMusic) {
+          sound.play();
+        }
+        if (!playMusic) {
+          sound.pause();
+        }
+      }
+    };
+
+    const observer = new IntersectionObserver(intersectionCallback, {
+      threshold: 0.5,
+    });
+    if (container.current) observer.observe(container.current);
+  }, [music, playMusic]);
+
   return (
     <div
+      ref={container}
       className={`${styles.background} ${gradient ? styles.gradient : ""}`}
       style={
         {

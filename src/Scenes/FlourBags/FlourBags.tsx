@@ -3,7 +3,13 @@ import styles from "./FlourBags.module.css";
 
 export const FlourBags = () => {
   return (
-    <Scene backgroundImage="/Backgrounds/Sundown.webp" altImage="Atardecer">
+    <Scene
+      backgroundImage="/Backgrounds/Sundown.webp"
+      altImage="Atardecer"
+      music={{
+        musicTrack: "/Music/Sparkle.mp3",
+      }}
+    >
       <Scene.Item
         className={styles.gradient}
         containerClassName={styles.wheat}

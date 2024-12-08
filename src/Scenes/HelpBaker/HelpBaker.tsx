@@ -3,7 +3,13 @@ import styles from "./HelpBaker.module.css";
 
 export const HelpBaker = () => {
   return (
-    <Scene backgroundImage="/Backgrounds/Afternoon.webp" altImage="Atardecer">
+    <Scene
+      backgroundImage="/Backgrounds/Afternoon.webp"
+      altImage="Atardecer"
+      music={{
+        musicTrack: "/Music/Sigh.mp3",
+      }}
+    >
       <Scene.Item
         className={styles.gradient}
         containerClassName={styles.grass}
