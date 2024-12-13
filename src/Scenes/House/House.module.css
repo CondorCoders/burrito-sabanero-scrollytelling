@@ -1,0 +1,14 @@
+.burrito {
+  width: 70%;
+}
+.house {
+  object-position: 60%;
+}
+@media (min-width: 768px) {
+  .burrito {
+    width: fit-content;
+  }
+  .house {
+    object-position: center;
+  }
+}

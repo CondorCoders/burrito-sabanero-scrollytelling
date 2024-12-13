@@ -1,0 +1,19 @@
+.recapScene {
+  position: relative;
+  width: 90%;
+  margin-bottom: 2rem;
+}
+
+.topScene {
+  margin-top: 40%;
+}
+
+@media (min-width: 768px) {
+  .recapScene {
+    width: 40%;
+  }
+
+  .topScene {
+    margin-top: 12%;
+  }
+}

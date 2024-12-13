@@ -1,0 +1,14 @@
+.imgBackground,
+.foreground {
+  object-position: left;
+}
+
+@media (min-width: 768px) {
+  .background {
+    margin-top: -5%;
+  }
+  .imgBackground,
+  .foreground {
+    object-position: center;
+  }
+}

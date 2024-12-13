@@ -46,11 +46,11 @@ export const Sunrise = () => {
         text="Por un sendero al alba comenzó, el burrito sabanero su viaje emprendió."
         animations={{
           from: {
-            top: "30%",
+            top: "40%",
             opacity: 0,
           },
           to: {
-            top: "25%",
+            top: "20%",
             opacity: 1,
           },
           scroll: {

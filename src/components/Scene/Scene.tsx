@@ -14,6 +14,8 @@ interface MusicProps {
 }
 
 interface SceneProps {
+  classNames?: string;
+  imageClassNames?: string;
   backgroundImage?: string;
   altImage?: string;
   backgroundColor?: string;
@@ -145,11 +147,13 @@ const Container = ({ children }: React.PropsWithChildren) => {
 
 export const Scene = ({
   backgroundImage,
+  imageClassNames,
   altImage,
   backgroundColor,
   gradient = true,
   children,
   music,
+  classNames,
 }: React.PropsWithChildren<SceneProps>) => {
   const { playMusic } = useContext(MusicContext);
   const container = useRef<HTMLDivElement | null>(null);
@@ -183,7 +187,9 @@ export const Scene = ({
   return (
     <div
       ref={container}
-      className={`${styles.background} ${gradient ? styles.gradient : ""}`}
+      className={`${styles.background} ${
+        gradient ? styles.gradient : ""
+      } ${classNames}`}
       style={
         {
           "--background-color": backgroundColor,
@@ -192,7 +198,7 @@ export const Scene = ({
     >
       {backgroundImage && (
         <img
-          className={styles.backgroundImg}
+          className={`${styles.backgroundImg} ${imageClassNames}`}
           src={backgroundImage}
           alt={altImage}
         />
