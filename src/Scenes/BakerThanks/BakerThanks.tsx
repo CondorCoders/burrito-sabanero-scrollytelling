@@ -75,7 +75,7 @@ export const BakerThanks = () => {
             opacity: 0,
           },
           to: {
-            top: "8%",
+            top: "0",
             opacity: 1,
           },
           scroll: {
@@ -89,11 +89,11 @@ export const BakerThanks = () => {
         text="“¡Gracias, burrito, por tu gran carrera! Hoy hornearé pan con todo mi afán, y mi alegría llenará el pueblo de pan.”"
         animations={{
           from: {
-            top: "26%",
+            top: "25%",
             opacity: 0,
           },
           to: {
-            top: "22%",
+            top: "14%",
             opacity: 1,
           },
           scroll: {
