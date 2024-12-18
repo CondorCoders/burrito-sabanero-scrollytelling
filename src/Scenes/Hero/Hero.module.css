@@ -74,11 +74,11 @@ html:has(dialog[open]) {
   }
 
   .subheading {
-    font-size: 1rem;
+    font-size: 2rem;
   }
 
   .subheading,
   .dialog {
-    max-width: 60%;
+    max-width: 70%;
   }
 }
