@@ -1,0 +1,84 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.containerInner {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.heading {
+  font-family: WavingAtChristmas;
+  color: #fff;
+  font-size: 4rem;
+  margin: 0;
+}
+.accent {
+  color: #eecf56;
+  font-size: 5rem;
+}
+.subheading {
+  margin: 0 auto;
+  max-width: 100%;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.dialog {
+  max-width: 80%;
+  font-size: 1rem;
+}
+
+.dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black backdrop */
+  z-index: 1000;
+}
+
+.actions {
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+button {
+  border: 1px solid #eecf56;
+  background-color: transparent;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #eecf56;
+}
+
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .heading {
+    font-size: 5rem;
+    margin: 0;
+  }
+  .accent {
+    font-size: 6rem;
+  }
+
+  .subheading {
+    font-size: 1rem;
+  }
+
+  .subheading,
+  .dialog {
+    max-width: 60%;
+  }
+}

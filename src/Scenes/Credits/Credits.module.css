@@ -1,4 +1,44 @@
+.sky {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.containerInner {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0.5rem;
+}
+.heading {
+  font-family: WavingAtChristmas;
+  color: #eecf56;
+  font-size: 5rem;
+  margin: 0;
+}
+
+.subheading {
+  margin: 0 auto;
+  max-width: 100%;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.link {
+  color: #fff;
+}
+
+.link:hover {
+  color: #eecf56;
+}
+
 @media (min-width: 768px) {
+  .subheading {
+    font-size: 2rem;
+  }
+
   .sky {
     margin-top: -5%;
   }

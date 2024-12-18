@@ -1,11 +1,8 @@
-import { CSSProperties, useContext, useEffect, useRef } from "react";
+import { CSSProperties, useContext, useEffect, useRef, useState } from "react";
 import styles from "./Scene.module.css";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import _ScrollTrigger from "gsap/ScrollTrigger";
 import { MusicContext } from "../../contexts/MusicContext";
-
-gsap.registerPlugin(_ScrollTrigger);
 
 interface MusicProps {
   musicTrack?: string;
@@ -157,6 +154,7 @@ export const Scene = ({
 }: React.PropsWithChildren<SceneProps>) => {
   const { playMusic } = useContext(MusicContext);
   const container = useRef<HTMLDivElement | null>(null);
+  const [inView, setInView] = useState(false);
 
   useEffect(() => {
     const sound = new Audio(music?.musicTrack);
@@ -166,15 +164,28 @@ export const Scene = ({
     if (music?.loop) {
       sound.loop = true;
     }
+
+    if (playMusic && inView) {
+      sound.play();
+    }
+
+    if (!playMusic) {
+      sound.pause();
+    }
+
+    return () => {
+      sound.pause();
+      sound.currentTime = 0;
+    };
+  }, [music, playMusic, inView]);
+
+  useEffect(() => {
     const intersectionCallback = (entries: IntersectionObserverEntry[]) => {
       const entry = entries[0];
-      if (entry.isIntersecting && music) {
-        if (playMusic) {
-          sound.play();
-        }
-        if (!playMusic) {
-          sound.pause();
-        }
+      if (entry.isIntersecting) {
+        setInView(true);
+      } else {
+        setInView(false);
       }
     };
 
@@ -182,7 +193,7 @@ export const Scene = ({
       threshold: 0.5,
     });
     if (container.current) observer.observe(container.current);
-  }, [music, playMusic]);
+  }, []);
 
   return (
     <div

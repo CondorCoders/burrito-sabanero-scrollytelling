@@ -93,7 +93,7 @@ export const BakerThanks = () => {
             opacity: 0,
           },
           to: {
-            top: "18%",
+            top: "22%",
             opacity: 1,
           },
           scroll: {

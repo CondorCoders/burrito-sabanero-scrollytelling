@@ -3,14 +3,7 @@ import styles from "./Sunrise.module.css";
 
 export const Sunrise = () => {
   return (
-    <Scene
-      backgroundImage="/Backgrounds/Sunrise.webp"
-      altImage="Amanecer"
-      music={{
-        musicTrack: "/Music/ChristmasMusic.mp3",
-        volume: 0.5,
-      }}
-    >
+    <Scene backgroundImage="/Backgrounds/Sunrise.webp" altImage="Amanecer">
       <Scene.Item
         containerClassName={styles.clouds}
         className={styles.cloudImage}
@@ -67,6 +60,7 @@ export const Sunrise = () => {
           animations={{
             from: {
               bottom: "-5%",
+              left: "40%",
               transform: "translate(-90%, 0) rotate(-40deg)",
             },
             to: {
